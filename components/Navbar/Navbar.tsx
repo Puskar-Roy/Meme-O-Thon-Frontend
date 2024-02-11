@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { CgMenuGridO, CgClose } from "react-icons/cg";
 import Image from "next/image";
-import logo from "@/public/1.png";
+import logo from "@/public/2.png";
 import "./Navbar.css";
 import { Navitem } from "@/interface";
 import { NavbarData } from "@/utils/data";
@@ -22,8 +22,8 @@ const Navbar = () => {
             <Image
               src={logo}
               alt="logo"
-              height={80}
-              width={150}
+              height={40}
+              width={180}
               className="logo rounded-lg z-15"
             />
           </Link>
