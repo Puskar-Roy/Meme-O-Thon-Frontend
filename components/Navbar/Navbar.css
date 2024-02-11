@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Karla:ital,wght@0,300;1,200&family=Montserrat:wght@200;600&family=Poppins:wght@200&family=Roboto:wght@300;400&family=Ubuntu:wght@300;500&family=Work+Sans:wght@300&display=swap");
+
+:root {
+  --mainColor: #ffe57a;
+  --darkColor: #113231;
+}
+
+header {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 20px;
+  z-index: 10000;
+}
+
+nav h2 .link {
+  color: var(--darkColor);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2.7rem;
+  z-index: 10000;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.logo{
+    z-index: 15;
+}
+.navList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 2.8rem;
+}
+
+.navList .navListItem .link {
+  color: var(--darkColor);
+  transition: 0.3s ease;
+}
+.navList .navListItem .link:hover {
+  color: var(--mainColor);
+  transition: 0.3s ease;
+}
+
+.icons {
+  display: none;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 990px) {
+  .icons {
+    display: block;
+  }
+  .navList {
+    display: none;
+  }
+  .navListActive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    flex-direction: column;
+    gap: 35px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+  }
+  .open,
+  .close {
+    font-size: 1.5rem;
+    margin-top: 6px;
+    position: relative;
+    z-index: 15;
+  }
+}
