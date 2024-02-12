@@ -11,13 +11,5 @@ export const NavbarData: Navitem[] = [
   {
     href: "/contact",
     label: "Contact",
-  },
-  {
-    href: "/login",
-    label: "Login",
-  },
-  {
-    href: "/register",
-    label: "Register",
-  },
+  }
 ];
