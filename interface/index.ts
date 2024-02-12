@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 export interface Navitem {
   href: string;
   label: string;
-  onClick?: () => void;
 }
 
 export interface GoogleProviderConfig {

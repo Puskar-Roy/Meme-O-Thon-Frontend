@@ -8,9 +8,14 @@ import "./Navbar.css";
 import { Navitem } from "@/interface";
 import { NavbarData } from "@/utils/data";
 import { useSession, signOut } from "next-auth/react";
+
+
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const session = useSession();
+  console.log(session.data?.user?.image);
+  
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -37,12 +42,8 @@ const Navbar = () => {
             <NavItem key={href} href={href} label={label} />
           ))}
           {session.status === "authenticated" ? (
-            // <NavItem
-            //   onClick={() => signOut()}
-            //   href="/logout"
-            //   label={session.data?.user?.name ?? "Join Us"}
-            // />
-            <h1 className="navListItem" onClick={() => signOut()}>
+            <h1 className="navListItem cursor-pointer flex justify-center items-center gap-2" onClick={() => signOut()}>
+              <Image className="rounded-lg" src={session.data?.user?.image ?? logo} alt="user" height={40} width={40}/>
               <p className="link">{session.data?.user?.name ?? "Join Us"}</p>
             </h1>
           ) : (
@@ -61,7 +62,7 @@ const Navbar = () => {
   );
 };
 
-const NavItem = ({ href, label, onClick }: Navitem) => {
+const NavItem = ({ href, label }: Navitem) => {
   return (
     <li className="navListItem">
       <Link href={href} className="link">
